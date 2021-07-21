@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.2.9-b130926.1035 svn-revision#5f6196f2b90e9460065a4c2f4e30e065b245e51e. --><xs:schema xmlns:tns="http://zsoap.mycompany.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://zsoap.mycompany.com/">
+
+<xs:element name="getInformations" type="tns:getInformations"></xs:element>
+
+<xs:element name="getInformationsResponse" type="tns:getInformationsResponse"></xs:element>
+
+<xs:complexType name="getInformations">
+<xs:sequence>
+<xs:element name="arg0" type="xs:int"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getInformationsResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:information" minOccurs="0"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="information">
+<xs:sequence>
+<xs:element name="Date" type="xs:string"></xs:element>
+<xs:element name="id" type="xs:int"></xs:element>
+<xs:element name="Price" type="xs:int"></xs:element>
+<xs:element name="ListSellers" type="tns:seller" maxOccurs="unbounded"></xs:element>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="seller">
+<xs:sequence>
+<xs:element name="Name" type="xs:string"></xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
